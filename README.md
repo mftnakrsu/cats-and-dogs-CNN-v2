@@ -44,3 +44,27 @@ You can see detail of the architecture of the VGG16 convolutional base:
 ![alt text](https://i.hizliresim.com/hgRALi.jpg)
 
 As you can see, we reach a validation accuracy of about 92%. This is much better than our small convnet trained from scratch.
+
+
+
+# What ConvNets Learn:
+
+This channel appears to encode a diagonal edge detector.
+
+![alt text](https://i.hizliresim.com/LA0jJ3.jpg)
+
+![alt text](https://i.hizliresim.com/zR8OMT.jpg)
+
+![alt text](https://i.hizliresim.com/QQLRJW.jpg)
+
+![alt text](https://i.hizliresim.com/Lai2Sh.jpg)
+
+![alt text](https://i.hizliresim.com/PUVnye.jpg)
+
+A few remarkable things to note here:
+
+The first layer acts as a collection of various edge detectors. At that stage, the activations are still retaining almost all of the information present in the initial picture.
+
+As we go higher-up, the activations become increasingly abstract and less visually interpretable. They start encoding higher-level concepts such as "cat ear" or "cat eye". Higher-up presentations carry increasingly less information about the visual contents of the image, and increasingly more information related to the class of the image.
+
+The sparsity of the activations is increasing with the depth of the layer: in the first layer, all filters are activated by the input image, but in the following layers more and more filters are blank. This means that the pattern encoded by the filter isn't found in the input image.
